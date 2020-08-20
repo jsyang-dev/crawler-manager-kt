@@ -1,11 +1,11 @@
-package link.crawler.manager
+package link.crawler.config.server
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-open class ManagerApiApplication
+open class ConfigServerApplication
 
 fun main(args: Array<String>) {
-    runApplication<ManagerApiApplication>(*args)
+    runApplication<ConfigServerApplication>(*args)
 }
