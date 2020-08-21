@@ -1,2 +1,2 @@
 rootProject.name = "crawler-manager-kt"
-include("manager-api")
+include("config-server", "manager-api")
