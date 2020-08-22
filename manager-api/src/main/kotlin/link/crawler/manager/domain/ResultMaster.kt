@@ -1,5 +1,8 @@
 package link.crawler.manager.domain
 
-class ResultMaster {
+import javax.persistence.Entity
+
+@Entity
+open class ResultMaster {
 
 }

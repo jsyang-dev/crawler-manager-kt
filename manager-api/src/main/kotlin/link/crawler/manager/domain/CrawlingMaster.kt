@@ -1,10 +1,11 @@
 package link.crawler.manager.domain
 
 import javax.persistence.Column
+import javax.persistence.Entity
 import javax.persistence.OneToMany
 
+@Entity
 open class CrawlingMaster(
-
         @Column(nullable = false)
         var subject: String,
 
