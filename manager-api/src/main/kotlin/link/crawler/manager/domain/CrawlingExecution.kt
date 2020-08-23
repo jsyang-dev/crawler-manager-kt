@@ -8,13 +8,14 @@ open class CrawlingExecution(
         var crawlingMaster: CrawlingMaster,
 
         @Column(nullable = false)
-        val siteUrl: String,
+        var siteUrl: String,
 
         @Column(nullable = false, columnDefinition = "text")
-        val executionCode: String
-) {
-        fun changeCrawlingMaster(crawlingMaster: CrawlingMaster) {
-                this.crawlingMaster = crawlingMaster;
-                crawlingMaster.getCrawlingExecutionList().add(this);
-        }
+        var executionCode: String
+) : BaseEntity() {
+
+    fun changeCrawlingMaster(crawlingMaster: CrawlingMaster) {
+        this.crawlingMaster = crawlingMaster
+        crawlingMaster.crawlingExecutionList.add(this)
+    }
 }

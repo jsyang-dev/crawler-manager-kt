@@ -7,23 +7,22 @@ import java.time.LocalDateTime
 import javax.persistence.*
 
 @MappedSuperclass
-//@EntityListeners(AuditingEntityListener.class)
-abstract class BaseEntity(
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        var id: Long,
+@EntityListeners(AuditingEntityListener::class)
+abstract class BaseEntity {
 
-        @Column(updatable = false)
-        var createdBy: String,
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    var id: Long = 0
 
-        @CreatedDate
-        @Column(updatable = false)
-        var createdDate: LocalDateTime,
+    @Column(updatable = false)
+    var createdBy: String = ""
 
-        @LastModifiedDate
-        var lastModifiedBy: String,
+    @CreatedDate
+    @Column(updatable = false)
+    var createdDate: LocalDateTime = LocalDateTime.now()
 
-        var lastModifiedDate: LocalDateTime
-) {
-    constructor()
+    @LastModifiedDate
+    var lastModifiedBy: String = ""
+
+    var lastModifiedDate: LocalDateTime = LocalDateTime.now()
 }
