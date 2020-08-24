@@ -3,7 +3,7 @@ package link.crawler.manager.domain
 import javax.persistence.*
 
 @Entity
-open class ResultMaster(
+class ResultMaster(
         @ManyToOne(fetch = FetchType.LAZY)
         @JoinColumn(name = "crawling_master_id")
         var crawlingMaster: CrawlingMaster,
@@ -20,7 +20,7 @@ open class ResultMaster(
 ) : BaseEntity() {
 
     @OneToMany(mappedBy = "resultMaster")
-    var resultDetailList: MutableList<ResultDetail> = mutableListOf()
+    var resultDetailList = mutableListOf<ResultDetail>()
 
     fun changeCrawlingMaster(crawlingMaster: CrawlingMaster) {
         this.crawlingMaster = crawlingMaster

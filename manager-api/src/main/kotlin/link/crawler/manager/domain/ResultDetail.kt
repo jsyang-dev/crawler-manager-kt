@@ -3,7 +3,7 @@ package link.crawler.manager.domain
 import javax.persistence.*
 
 @Entity
-open class ResultDetail(
+class ResultDetail(
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "result_master_id")
         var resultMaster: ResultMaster,
 
@@ -18,6 +18,4 @@ open class ResultDetail(
 
         @Column(nullable = false)
         var link: String
-) : BaseEntity() {
-
-}
+) : BaseEntity()

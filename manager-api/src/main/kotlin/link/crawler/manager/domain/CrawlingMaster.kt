@@ -5,17 +5,17 @@ import javax.persistence.Entity
 import javax.persistence.OneToMany
 
 @Entity
-open class CrawlingMaster(
+class CrawlingMaster(
         @Column(nullable = false)
         var subject: String
 ) : BaseEntity() {
 
         @OneToMany(mappedBy = "crawlingMaster")
-        var crawlingExecutionList: MutableList<CrawlingExecution> = mutableListOf()
+        var crawlingExecutionList = mutableListOf<CrawlingExecution>()
 
         @OneToMany(mappedBy = "crawlingMaster")
-        var crawlingScheduleList: MutableList<CrawlingSchedule> = mutableListOf()
+        var crawlingScheduleList = mutableListOf<CrawlingSchedule>()
 
         @OneToMany(mappedBy = "crawlingMaster")
-        var resultMasterList: MutableList<ResultMaster> = mutableListOf()
+        var resultMasterList = mutableListOf<ResultMaster>()
 }

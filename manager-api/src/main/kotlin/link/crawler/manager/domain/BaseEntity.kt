@@ -12,17 +12,17 @@ abstract class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0
+    var id = 0L
 
     @Column(updatable = false)
-    var createdBy: String = ""
+    var createdBy = ""
 
     @CreatedDate
     @Column(updatable = false)
-    var createdDate: LocalDateTime = LocalDateTime.now()
+    var createdDate = LocalDateTime.now()
 
     @LastModifiedDate
-    var lastModifiedBy: String = ""
+    var lastModifiedBy = ""
 
-    var lastModifiedDate: LocalDateTime = LocalDateTime.now()
+    var lastModifiedDate = LocalDateTime.now()
 }

@@ -3,7 +3,7 @@ package link.crawler.manager.domain
 import javax.persistence.*
 
 @Entity
-open class CrawlingSchedule(
+class CrawlingSchedule(
         @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "crawling_master_id")
         var crawlingMaster: CrawlingMaster,
 
